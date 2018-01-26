@@ -1,0 +1,11 @@
+{
+  "name": "catch",
+  "version": "1.0.0",
+  "description": "capture text, line by line",
+  "main": "index.js",
+  "bin": {
+    "catch": "bin/catch-cli.js"
+  },
+  "author": "Brett Commandeur",
+  "license": "ISC"
+}
