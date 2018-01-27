@@ -14,21 +14,21 @@ const file = filename + '.' + fileformat
 const readline = require('readline')
 const rl = readline.createInterface(process.stdin, process.stdout)
 
-// Track Empty Lines to Exit on Double Enter
-let emptyLineCount = 0
+// Track Empty Lines to Exit on Triple Enter
+// let emptyLineCount = 0
 
 function handleEmptyLine(line) {
 
-  emptyLineCount++
+  // emptyLineCount++
 
-  // Consecutive Empty Lines
-  if (emptyLineCount > 1) {
-    rl.close()
-    return
-  }
+  // // Consecutive Empty Lines
+  // if (emptyLineCount > 1) {
+  rl.close()
+  //   return
+  // }
 
-  captureLine(line)
-  rl.prompt()
+  // captureLine(line)
+  // rl.prompt()
 }
 
 function handleLine(line) {
@@ -39,7 +39,7 @@ function handleLine(line) {
     return
   }
 
-  emptyLineCount = 0
+  // emptyLineCount = 0
   captureLine(line)
   rl.prompt()
 }
@@ -50,7 +50,8 @@ function handleClose() {
 
 function captureLine (line) {
 
-  line = line + '\n'
+  // Add a line break / paragraph break
+  line = line + '\n' + '\n'
 
   fs.appendFile(file, line, err => {  
     if (err) throw err;
